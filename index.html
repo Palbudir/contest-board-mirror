@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- DOMjudge version 9.0.0 -->
+    <meta charset="utf-8">
+    <title>排行榜 gdutpc-freshman-pre-2025 - DOMjudge</title>
+    <link rel="icon" href="/favicon.ico?v=9.0.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css?v=9.0.0">
+    <link rel="stylesheet" href="/css/fontawesome-all.min.css?v=9.0.0">
+    <link rel="stylesheet" href="/public/scoreboard-category-color.css">
+    <script src="/js/jquery.min.js?v=9.0.0"></script>
+    <script src="/js/jquery.debounce.min.js?v=9.0.0"></script>
+    <script src="/js/bootstrap.bundle.min.js?v=9.0.0"></script>
+
+    <script src="/js/domjudge.js?v=9.0.0"></script>
+                <link rel="stylesheet" href="/style_domjudge.css?v=9.0.0">
+
+        
+        </head>
+<body>
+            <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand hidden-sm-down" href="/public">DOMjudge</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuDefault"
+            aria-controls="menuDefault" aria-expanded="false" aria-label="切换导航">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    
+    <div class="collapse navbar-collapse" id="menuDefault">
+        <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+                <a class="nav-link active"
+                    href="/public"><i class="fas fa-list-ol"></i> 排行榜</a>
+            </li>
+            <li class="nav-item">
+                                    <a class="nav-link disabled"><i class="fas fa-book-open"></i> 题目集</a>
+                            </li>
+
+            
+                    </ul>
+
+                <a class="btn btn-info btn-sm me-2" href="/login">
+        <i class="fas fa-sign-in-alt"></i> 登录
+    </a>
+
+        <ul class="navbar-nav">
+                    </ul>
+
+        <div class="navbar-text" style="white-space:nowrap;">
+    <span style="padding-left: 10px;">
+        <i class="fas fa-clock loading-indicator"></i>
+    </span>
+        <span id="timeleft">开始倒计时: 13:45:16</span>
+</div>
+
+<script>
+    var initial = 1763824483;
+    var localInitial = new Date().getTime();
+    var activatetime = 1763649960;
+    var starttime = 1763874000;
+    var endtime = 1763888400;
+    var clientOffset = localInitial - new Date(initial * 1000).getTime();
+    var timeleftelt = document.getElementById("timeleft");
+
+    setInterval(function () {
+        updateClock();
+    }, 1000);
+    updateClock();
+</script>
+    </div>
+  </div>
+</nav>
+        <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                                                                                                                                                    
+    <div data-ajax-refresh-target data-ajax-refresh-after="initializeScoreboard" class="mt-3">
+        
+
+    
+    <div class="card" >
+        <div class="card-header" style="font-family: Roboto, sans-serif;">
+            <div class="row">
+                <div class="col-md-6 col-12">
+                    <span style="font-weight: bold;">2025 年广东工业大学 ACM 新生程序设计竞赛（初赛）</span>
+                </div>
+                <div class="col-md-6 col-12 text-md-end text-start">
+                    <span id="contesttimer">
+                                            计划开始于 Sun 23 Nov 2025 13:00:00 CST
+                                    </span>
+                </div>
+            </div>
+        </div>
+
+            </div> 
+                                <div class="row">
+                                    <div class="col-lg-4 col-sm-6 col-12 mt-4">
+                        <div class="card" style="font-family: Roboto, sans-serif;">
+                            <div class="card-header">Participants</div>
+                            <div class="card-body">
+                                <ul class="list-group list-group-flush">
+                                                                                                                                                                                                                                                    <li class="list-group-item cl_FFFFFF">
+                                                                                                                                                                                    <img loading="lazy" class="affiliation-logo"
+                                                     src="/images/affiliations/gdut.png?v=9.0.0" alt="广东工业大学"
+                                                     title="广东工业大学">
+                                                                                        广东工业大学
+                                        </li>
+                                                                    </ul>
+                            </div>
+                        </div>
+                    </div>
+                                                                            <div class="col">
+                            <div class="card" style="border: none;"></div>
+                        </div>
+                                            <div class="col">
+                            <div class="card" style="border: none;"></div>
+                        </div>
+                                                </div>
+             
+    <p id="lastmod">
+        最后更新: Sat 22 Nov 2025 23:14:43 CST<br/>
+        使用 <a href="https://www.domjudge.org/" target="_top">DOMjudge</a>
+    </p>
+    </div>
+
+    <div data-submissions-modal>
+        <div class="modal fade"  tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                        Submissions for team
+    <span data-team></span>
+    on problem
+    <span data-problem-badge></span>
+    <span data-problem-name></span>
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                    <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+            </div>
+            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    关闭                </button>
+                            </div>
+        </div>
+    </div>
+</div>
+    </div>
+    <script type="text/template" id="empty-submission-list">
+    <div class="alert alert-warning">No submissions</div>
+</script>
+<script type="text/template" id="submission-list">
+    <table
+        class="data-table table table-hover table-striped table-sm submissions-table">
+        <thead class="thead-light">
+        <tr>
+            <th scope="col">time</th>
+            <th scope="col">language</th>
+            <th scope="col">result</th>
+        </tr>
+        </thead>
+        <tbody data-submission-list>
+        </tbody>
+    </table>
+</script>
+<script type="text/template" id="submission-list-item">
+    <tr>
+        <td data-time></td>
+        <td class="langid" data-language-id></td>
+        <td data-verdict></td>
+    </tr>
+</script>
+            </div>
+        </div>
+    </div>
+
+<script>
+            var domjudge_base_url = "";
+        var markdownPreviewUrl = "/markdown-preview";
+    $(function () {
+        /* toggle refresh if set */
+                $('#refresh-navitem').on('click', function () {
+            toggleRefresh('/public', 30, 1);
+        });
+                /* Enable page refresh if set if wanted by the page, and wanted by the user */
+                enableRefresh('/public', 30, 1);
+        
+        initializeAjaxModals();
+    });
+</script>
+    <script>
+        initFavouriteTeams();
+        pinScoreheader();
+        initScoreboardSubmissions();
+
+        
+        var scoreboardUrl = '/public';
+
+        $(function () {
+            window.initializeScoreboard = function () {
+                var $newProgress = $('[data-ajax-refresh-target] > .d-none > [data-progress-bar]');
+                if ($newProgress.length) {
+                    var $oldProgress = $('body > [data-progress-bar]');
+                    $oldProgress.html($newProgress.children());
+                    $newProgress.parent().remove();
+                }
+
+                initFavouriteTeams();
+                pinScoreheader();
+                                resizeMobileTeamNamesAndProblemBadges();
+                initScoreboardSubmissions();
+            };
+
+                    });
+    </script>
+</body>
+</html>
